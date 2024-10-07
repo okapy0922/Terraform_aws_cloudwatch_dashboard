@@ -66,10 +66,20 @@ aws apigateway get-rest-apis --profile my-aws-account-name --region ap-northeast
 # Lambda関数の取得
 aws apigateway get-rest-apis --profile my-aws-account-name --region ap-northeast-1
 ```
-
-
-## terraform plan 実行時に「Backend initialization required」エラー表示時
+## AWSのプロファイルを指定する
 ```
-# Terraformの初期化
+# 用意したプロファイル名を確認する
+aws configure list-profiles
+
+# 指定したプロファイルで作業する
+aws sts get-caller-identity --profile プロファイル名
+```
+## Terraformの初期化
+```
 terraform init -reconfigure
+```
+
+## 現状の実行計画を確認する「terraform planコマンド」
+```
+terraform plan
 ```
