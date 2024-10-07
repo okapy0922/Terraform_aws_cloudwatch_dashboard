@@ -29,6 +29,16 @@ terraform.dev.tfvars
 terraform.stg.tfvars
 terraform.prod.tfvars
 ```
+## exampleはサンプルなためリソース作成なしなためローカルに状態を保存
+```
+# vi backend.tf
+terraform {
+  backend "local" {
+    path = "terraform.tfstate"  # ローカルに状態を保存
+  }
+}
+```
+
 ## 各ワークスペースでの現在の状況を確認する
 ```
 # ワークスペースを一覧表示
@@ -44,6 +54,19 @@ terraform plan -var-file="terraform.stg.tfvars"
 terraform workspace select prod
 terraform plan -var-file="terraform.prod.tfvars"
 ```
+## AWS上のリソース名を取得する
+```
+# DynamoDBテーブル名取得
+# AWS CLI登録後に実行(my-aws-account-name)を適宜修正
+aws dynamodb list-tables --profile my-aws-account-name --region ap-northeast-1
+
+# API Gatewayの取得
+aws apigateway get-rest-apis --profile my-aws-account-name --region ap-northeast-1
+
+# Lambda関数の取得
+aws apigateway get-rest-apis --profile my-aws-account-name --region ap-northeast-1
+```
+
 
 ## terraform plan 実行時に「Backend initialization required」エラー表示時
 ```
