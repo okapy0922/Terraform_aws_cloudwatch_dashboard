@@ -70,6 +70,12 @@ terraform plan
 ## Terraformを適用する（Terraform 構成を適用し、対象の環境でリソースを作成または変更する）
 ```
 terraform apply
+
+# .tfverファイルを指定してインフラストラクチャをデプロイする例
+terraform apply -var-file="terraform.環境名.tfvars"
+
+# 「Enter a value:」をyesで進む
+
 ```
 ##  Terraformリソースを削除（プロジェクトが不要になったとき）
 ```
