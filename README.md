@@ -77,6 +77,46 @@ terraform apply -var-file="terraform.環境名.tfvars"
 # 「Enter a value:」をyesで進む
 
 ```
+## エラー解決
+```
+Enter a value: yes
+
+aws_cloudwatch_dashboard.dashboard: Creating...
+╷
+│ Error: putting CloudWatch Dashboard (Terraform-dashboad): operation error CloudWatch: PutDashboard, https response error StatusCode: 400, RequestID: 24736d90-0bb1-4b29-8447-96f7ee429b0a, InvalidParameterInput: The dashboard body is invalid, there are 6 validation errors:
+│ [
+│   {
+│     "dataPath": "/widgets/4/properties/metrics/1/3",
+│     "message": "Repeat marker \".\" used but not enough fields in previous metric"
+│   },
+│   {
+│     "dataPath": "/widgets/6/properties/metrics/1/3",
+│     "message": "Repeat marker \".\" used but not enough fields in previous metric"
+│   {
+│     "dataPath": "/widgets/9/properties/metrics/0",
+│     "message": "Should NOT have more than 4 items"
+│   }
+│ ]
+│
+│   with aws_cloudwatch_dashboard.dashboard,
+│   on main.tf line 20, in resource "aws_cloudwatch_dashboard" "dashboard":
+│   20: resource "aws_cloudwatch_dashboard" "dashboard" {
+│
+╵
+```
+・ウィジェットの数え方は「０」ゼロから（0ベースインデックス）
+ "dataPath": "/widgets/4/properties/metrics/1/3",
+ 
+│"message": "Repeat marker \".\" used but not enough fields in previous metric"
+
+ゼロから数えた４つ目のウィジェットで使用している"."の部分は必要なメトリクスが正しく設定されていないため修正が必要
+
+・メトリクス内の配列で指定しているアイテムは最大４つまで
+ 
+│"message": "Should NOT have more than 4 items"
+
+
+
 ##  Terraformリソースを削除（プロジェクトが不要になったとき）
 ```
 terraform destroy
