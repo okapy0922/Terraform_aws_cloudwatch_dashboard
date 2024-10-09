@@ -115,6 +115,9 @@ aws_cloudwatch_dashboard.dashboard: Creating...
  
 │"message": "Should NOT have more than 4 items"
 
+## できあがったダッシュボード_v1
+![image](https://github.com/user-attachments/assets/45267192-0d9e-4703-9971-8d1a3f69ffaf)
+
 
 
 ##  Terraformリソースを削除（プロジェクトが不要になったとき）
