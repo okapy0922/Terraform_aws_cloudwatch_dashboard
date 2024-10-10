@@ -1,13 +1,13 @@
-variable "region" {
-  description = "AWS region"
+variable "aws_region" {
+  description = "AWSリージョン"
   type        = string
-  default     = "ap-northeast-1"  # デフォルト設定
+  default     = "ap-northeast-1"  # デフォルト設定をここに設定しておくことも可能、、dev.tfvarsで上書きされる
 }
 
 variable "profile" {
-  description = "AWS profile"
+  description = "AWSプロファイル名"
   type        = string
-  default     = "dev-backend-dashboad"  # デフォルト設定
+  default     = "default"  # デフォルト設定（必要に応じて変更）
 }
 
 variable "env" {
@@ -19,23 +19,17 @@ variable "env" {
 variable "project_name" {
   description = "Project name for tagging purposes"
   type        = string
-  default     = "example-project"  # デフォルト設定
+  default     = "Dev-dashboad"  # デフォルト設定
 }
 
 variable "dynamodb_table_name" {
-  description = "DynamoDB table name"
-  type        = string
-  default     = "example-dynamodb-table"  # デフォルト設定
+  description = "DynamoDB table names"
+  type        = list(string)  # リスト型
+  default     = []  # 空のリストをデフォルトとして設定（必要に応じて）
 }
 
 variable "api_gateway_name" {
-  description = "API Gateway name"
-  type        = string
-  default     = "example-api-gateway"  # デフォルト設定
-}
-
-variable "lambda_function_name" {
-  description = "Lambda function name"
-  type        = string
-  default     = "example-lambda-function"  # デフォルト設定
+  description = "API Gateway names"
+  type        = list(string)  # リスト型
+  default     = []  # 空のリストをデフォルトとして設定（必要に応じて）
 }
