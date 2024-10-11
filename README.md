@@ -1,5 +1,11 @@
 # セットアップ概要 Terraformの初期化や適用、削除の実行コマンド
 前提:ローカル環境のディレクトリ内に用意した.tf形式のenvファイルが存在している
+
+## バックエンドの初期化（新しいバックエンド構成をセットアップする、まずはinit）
+```
+terraform init
+```
+
 ## Terraform Workspaceを作成（異なる環境をわけて管理）
 ```
 terraform new dev
@@ -58,7 +64,7 @@ aws configure list-profiles
 # 指定したプロファイルで作業する
 aws sts get-caller-identity --profile プロファイル名
 ```
-## Terraformの初期化
+## Terraformの再初期化（再初期化、バックエンド構成を変更した際などに実行）
 ```
 terraform init -reconfigure
 ```
