@@ -6,7 +6,7 @@
 terraform init
 ```
 
-## Terraform Workspaceを作成（異なる環境をわけて管理）
+## Terraform Workspaceを作成（異なる環境をわけて管理）⇒用意したS3バケットなどに.tfstateファイルが保存されること
 ```
 terraform new dev
 terraform new stg
