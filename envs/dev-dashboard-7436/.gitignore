@@ -1,12 +1,13 @@
-# Terraform関連のディレクトリとファイル
-.terraform/                # ディレクトリ全体を無視
-.terraform.lock.hcl        # ロックファイル
-*.tfvars                   # すべての.tfvarsファイル
+# Terraform関連ファイル
+*.tf
+!main.tf
+!variables.tf
+!provider.tf
 
-# TFLintの設定ファイル
-.tflint.hcl
+# Terraformの状態ファイルとディレクトリ
+.terraform/
+.terraform.lock.hcl
 
-# その他、環境に依存するファイル
-backend.tf
-locals.tf
-
+# 変数定義ファイル
+*.tfvars
+*.tfvars.json
