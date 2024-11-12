@@ -1,7 +1,12 @@
-.terraform/
-.terraform/terraform.dev_7436.tfvars
-.terraform/backend.tf
-.terraform/locals.tf
-.terraform.lock.hcl
+# Terraform関連のディレクトリとファイル
+.terraform/                # ディレクトリ全体を無視
+.terraform.lock.hcl        # ロックファイル
+*.tfvars                   # すべての.tfvarsファイル
+
+# TFLintの設定ファイル
 .tflint.hcl
-terraform.dev.tfvars
+
+# その他、環境に依存するファイル
+backend.tf
+locals.tf
+
