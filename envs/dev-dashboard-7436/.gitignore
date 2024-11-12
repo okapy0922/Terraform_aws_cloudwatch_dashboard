@@ -1,5 +1,4 @@
-# Terraform関連ファイル
-*.tf
+# 必要なファイルのみ追跡対象に戻す
 !main.tf
 !variables.tf
 !provider.tf
@@ -7,7 +6,13 @@
 # Terraformの状態ファイルとディレクトリ
 .terraform/
 .terraform.lock.hcl
+*.tfstate
+*.tfstate.*
 
 # 変数定義ファイル
 *.tfvars
 *.tfvars.json
+
+# ローカル設定ファイル
+backend.tf
+locals.tf
