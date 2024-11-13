@@ -1,3 +1,5 @@
+/*複数リソースに対応したClouwatchダッシュボードのメトリクス表示*/
+
 # 現在のAWSアカウントIDを取得
 data "aws_caller_identity" "current" {}
 
