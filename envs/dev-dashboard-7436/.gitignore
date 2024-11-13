@@ -5,6 +5,7 @@
 # 以下はignore
 .terraform/
 locals.tf
+backend.tf
 terraform.dev_7436.tfvars
 .terraform.lock.hcl
 .tflint.hcl
