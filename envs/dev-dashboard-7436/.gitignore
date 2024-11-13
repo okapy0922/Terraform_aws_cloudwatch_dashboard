@@ -3,9 +3,9 @@
 !variables.tf
 !example_locals.tf
 # 以下はignore
+.terraform/
 locals.tf
 terraform.dev_7436.tfvars
-.terraform/
 .terraform.lock.hcl
-.terraform/terraform.tfstate
 .tflint.hcl
+**/.terraform/
