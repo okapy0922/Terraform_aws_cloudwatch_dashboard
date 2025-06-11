@@ -122,7 +122,8 @@ aws_cloudwatch_dashboard.dashboard: Creating...
 │"message": "Should NOT have more than 4 items"
 
 ## できあがったダッシュボード_v1
-![image](https://github.com/user-attachments/assets/45267192-0d9e-4703-9971-8d1a3f69ffaf)
+![image](https://github.com/user-attachments/assets/467893fb-8d61-4afa-a4d3-e7063597f2ea)
+
 
 
 
